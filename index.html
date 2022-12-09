@@ -32,33 +32,33 @@
     .mapboxgl-ctrl-fullscreen,
     .mapboxgl-ctrl-shrink {
       background-color: #fff !important;
-      width: 60px !important;
-      height: 60px !important;
+      width: 40px !important;
+      height: 40px !important;
       border: none !important;
       border-radius: 10px !important;
       box-shadow: 0 0 0 2px rgb(0 0 0 / 10%) !important;
     }
 
     #undo {
-      background-image: url("/assets/images/undo.png");
+      background-image: url("assets/images/undo.png");
       background-position: center;
       background-repeat: no-repeat;
     }
 
     #looped-route {
-      background-image: url("/assets/images/loop.png");
+      background-image: url("assets/images/loop.png");
       background-position: center;
       background-repeat: no-repeat;
     }
 
     #use-current-location {
-      background-image: url("/assets/images/location.png");
+      background-image: url("assets/images/location.png");
       background-position: center;
       background-repeat: no-repeat;
     }
 
     #reset-route {
-      background-image: url("/assets/images/bin.png");
+      background-image: url("assets/images/bin.png");
       background-position: center;
       background-repeat: no-repeat;
     }
@@ -73,11 +73,13 @@
 
     #map {
       width: 100vw;
-      height: 65vh;
+      height: 62vh;
     }
 
     #weather-output {
       margin-top: 1rem;
+      margin: 1rem auto;
+      width: 360px;
     }
 
     #weather-info {
@@ -118,17 +120,17 @@
     }
 
     .weather-and-alerts {
-      height: 28vh;
+      height: 31vh;
     }
 
     header, nav {
-      height: 7vh;
+      height: 7vh !important;
     }
 
     #weather-input-day,
     #weather-input-time {
       display: inline-block;
-      width: 240px;
+      width: 180px;
     }
 
     .weather-container {
@@ -154,6 +156,10 @@
       }
     }
 
+    #map-alerts {
+      width: 180px !important;
+    }
+
   </style>
 
 </head>
@@ -162,7 +168,7 @@
 
   <header>
     <!-- Image and text -->
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar navbar-light bg-light p-0">
       <a class="navbar-brand" href="#">
         <img src="assets/images/running-logo-min.webp" width="30" height="30" class="d-inline-block align-top" alt="">
         PLAN MY RUN
@@ -193,25 +199,25 @@
     </div>
 
     <div class="row weather-and-alerts">
-      <div class="col-6 my-auto">
+      <div class="col-md-6 my-auto">
         <div class="weather-container">
           <div>
-            <div class="weather-heading"><h4>Weather:</h4></div>
-            <select name="day" id="weather-input-day" class="form-control mb-3">
+            <div class="weather-heading"><h4 class="m-0">Weather:</h4></div>
+            <select name="day" id="weather-input-day" class="form-select form-select-sm mb-1">
             </select>
   
-            <select name="time" id="weather-input-time" class="form-control mb-3">
+            <select name="time" id="weather-input-time" class="form-select form-select-sm mb-1">
             </select>
           </div>  
           <div >
-            <button type="button" id="get-weather" class="btn btn-outline-primary">Get Weather</button>
+            <button type="button" id="get-weather" class="btn btn-outline-primary btn-sm">Get Weather</button>
           </div>
          
         </div>
       </div>
-      <div class="col-6 m-auto">
+      <div class="col-md-6 m-auto">
         <div class="">
-          <div class="row w-100">
+          <div class="row">
             <div id="weather-output"></div>
           </div>
           <div class="row">
